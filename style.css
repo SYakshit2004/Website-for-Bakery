@@ -1,0 +1,202 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:#fff8f5;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 60px;
+    background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#6b3e26;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#6b3e26;
+    padding:8px 15px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:#6b3e26;
+    color:white;
+}
+
+.active{
+    background:#6b3e26;
+    color:white !important;
+}
+
+.cart-count{
+    background:#6b3e26;
+    color:white;
+    padding:3px 8px;
+    border-radius:50%;
+    font-size:13px;
+    margin-left:5px;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1509440159596-0249088772ff');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ff6f61;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    background:#e74c3c;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+    padding:40px;
+    text-align:center;
+}
+
+/* ================= PRODUCT GRID ================= */
+.product-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    background:#ff6f61;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#e74c3c;
+}
+
+/* ================= CART ================= */
+.cart-item{
+    background:white;
+    padding:15px;
+    margin:10px auto;
+    max-width:500px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#fff8f5;
+        width:200px;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
+}

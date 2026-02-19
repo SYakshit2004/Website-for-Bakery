@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu - Sweet Cravings</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">🧁 Sweet Cravings</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html" class="active">Menu</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="cart.html">Cart <span id="cartCount" class="cart-count">0</span></a></li>
+</ul>
+</nav>
+
+<div class="container">
+<h2>Our Delicious Treats 🍰</h2>
+<div id="product-list" class="product-grid"></div>
+</div>
+
+<script>
+let products = [
+{name:"Pizza",price:500,image:"https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"},
+{name:"Vanilla Cake",price:450,image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587"},
+{name:"Red Velvet Cake",price:650,image:"https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7"},
+{name:"Black Forest Cake",price:600,image:"https://images.unsplash.com/photo-1599785209707-28c0c9c41c4b"}
+];
+
+let productDiv = document.getElementById("product-list");
+
+products.forEach(product=>{
+productDiv.innerHTML += `
+<div class="card">
+<img src="${product.image}">
+<h3>${product.name}</h3>
+<p>₹${product.price}</p>
+<button onclick="addToCart('${product.name}',${product.price})">
+Add to Cart
+</button>
+</div>
+`;
+});
+</script>
+
+</body>
+</html>
